@@ -9,7 +9,7 @@
     <meta name="description" content="A Social Media Analytics Platform that lets you advertise on the Social Media Accounts of an Influencer!">
     <meta name="author" content="Influencer Control">
 
-    <title>Influencer Control</title>
+    <title>Influencer Control - Nurturing the Influencer Brand Ecosystem</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -36,6 +36,17 @@
 </head>
 
 <body id="page-top">
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.7&appId=1779453532302749";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -139,13 +150,21 @@
 
     <section id="contact">
       <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <h2 class="section-heading">Contact</h2>
+                  <hr class="darkhr">
+              </div>
+          </div>
+      </div>
+      <div class="container">
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6">
             <div class="form-area">
               <form role="form">
-                <br style="clear:both">
-                  <h3 style="margin-bottom: 25px; text-align: center;">Contact Us</h3>
+
+
           <div class="form-group">
           <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
         </div>
@@ -164,22 +183,32 @@
 </div>
 <div class="col-md-3"></div>
 </div>
-
       </div>
     </section>
 
-    <section class="main-section" style="background-color:#00796B;">
-      <div class="container">
+
+    <!-- Footer-->
+    <section class="main-section" id="footercontainer">
+
+      <div style="text-align:center;margin-top:15px;">
+        <!-- FB LIKE -->
+        <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
+
+      </div>
+
+      <div id="socialcontainer">
         <div class="text-center center-block">
-
-
-                <a class="socialicon" href=""><i class="fa fa-facebook fa-3x social"></i></a>
-	            <a class="socialicon" href=""><i class="fa fa-twitter fa-3x social"></i></a>
-	            <a class="socialicon" href=""><i class="fa fa-google-plus fa-3x social"></i></a>
-	            <a class="socialicon" href=""><i class="fa fa-instagram fa-3x social"></i></a>
-</div>
+              <a class="socialicon" href=""><i class="fa fa-facebook fa-2x social"></i></a>
+	            <a class="socialicon" href=""><i class="fa fa-twitter fa-2x social"></i></a>
+	            <a class="socialicon" href=""><i class="fa fa-google-plus fa-2x social"></i></a>
+	            <a class="socialicon" href=""><i class="fa fa-instagram fa-2x social"></i></a>
+        </div>
       </div>
+
     </section>
+
+
+
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
