@@ -5,6 +5,15 @@
  */.navbar-default,a{-webkit-transition:all .35s;-moz-transition:all .35s}header,header .header-content{position:relative;width:100%;text-align:center}body,html{height:100%;width:100%}body{font-family:Merriweather,'Helvetica Neue',Arial,sans-serif;webkit-tap-highlight-color:#222}.red{
      color:red;
      }
+
+#fbloginbutton {
+  display: inline-block;
+  position: relative;
+  border: 0px solid red;
+  margin-top: 13px;
+
+}
+
  .form-area
  {
      background-color: #607D8B;
