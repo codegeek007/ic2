@@ -227,30 +227,80 @@
                   <hr class="darkhr">
               </div>
           </div>
+          <div class="row" style="margin-top:10px;">
+
+              <div class="col-lg-8 col-lg-offset-2">
+
+                  <form id="contact-form" method="post" action="contact.php" role="form">
+
+                      <div class="messages"></div>
+
+                      <div class="controls">
+
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="form_name">Firstname *</label>
+                                      <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                                      <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="form_lastname">Lastname *</label>
+                                      <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                                      <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="form_email">Email *</label>
+                                      <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                                      <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="form_phone">Phone</label>
+                                      <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
+                                      <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                      <label for="form_message">Message *</label>
+                                      <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                      <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>
+                              <div style="text-align:center;" class="col-md-12">
+                                  <input type="submit" class="btn btn-default btn-xl sr-button" value="Send message">
+                              </div>
+                          </div>
+                      </div>
+
+                  </form>
+
+              </div><!-- /.8 -->
+
+          </div> <!-- /.row-->
       </div>
-      <div class="container">
+      <!--<div class="container">
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6">
             <div class="form-area">
-              <form role="form">
 
 
-          <div class="form-group">
-          <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
-        </div>
-        <div class="form-group">
-          <input type=1tarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
-                      <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
-                  </div>
-
-      <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Submit Form</button>
-      </form>
   </div>
 </div>
 <div class="col-md-3"></div>
 </div>
-      </div>
+      </div>-->
     </section>
 
 
@@ -290,6 +340,7 @@
 
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
+    <script src="js/validator.js"></script>
     <script src="js/contact.js"></script>
 
 </body>
