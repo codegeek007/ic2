@@ -9,7 +9,7 @@
     <meta name="description" content="A Social Media Analytics Platform that lets you advertise on the Social Media Accounts of an Influencer!">
     <meta name="author" content="Influencer Control">
 
-    <title>Influencer Control</title>
+    <title>Influencer Control - Nurturing the Influencer Brand Ecosystem</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,6 +37,87 @@
 
 <body id="page-top">
 
+  <script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      window.open("/dashboard.html","_self");
+      //window.location = "/dashboard.html";
+      //testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1779453532302749',
+    cookie     : true,  // enable cookies to allow the server to access
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.5' // use graph api version 2.5
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      //window.open("/dashboard.html","_self");
+    });
+
+  }
+</script>
+
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -53,6 +134,7 @@
                     <!--<li>
                       <a href="#" class="btn page-scroll" role="button" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>-->
+                    <li><div id="fbloginbutton"><fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button></div></li>
                     <li>
                         <a class="page-scroll" href="#about">Overview</a>
                     </li>
@@ -139,22 +221,26 @@
 
     <section id="contact">
       <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <h2 class="section-heading">Contact</h2>
+                  <hr class="darkhr">
+              </div>
+          </div>
+      </div>
+      <div class="container">
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6">
             <div class="form-area">
               <form role="form">
-                <br style="clear:both">
-                  <h3 style="margin-bottom: 25px; text-align: center;">Contact Us</h3>
+
+
           <div class="form-group">
           <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
-        </div>
-
-                  <div class="form-group">
-                  <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
+          <input type=1tarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
                       <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
                   </div>
 
@@ -164,22 +250,32 @@
 </div>
 <div class="col-md-3"></div>
 </div>
-
       </div>
     </section>
 
-    <section class="main-section" style="background-color:#00796B;">
-      <div class="container">
+
+    <!-- Footer-->
+    <section class="main-section" id="footercontainer">
+
+      <div style="text-align:center;margin-top:15px;">
+        <!-- FB LIKE -->
+        <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
+
+      </div>
+
+      <div id="socialcontainer">
         <div class="text-center center-block">
-
-
-                <a class="socialicon" href=""><i class="fa fa-facebook fa-3x social"></i></a>
-	            <a class="socialicon" href=""><i class="fa fa-twitter fa-3x social"></i></a>
-	            <a class="socialicon" href=""><i class="fa fa-google-plus fa-3x social"></i></a>
-	            <a class="socialicon" href=""><i class="fa fa-instagram fa-3x social"></i></a>
-</div>
+              <a class="socialicon" href=""><i class="fa fa-facebook fa-2x social"></i></a>
+	            <a class="socialicon" href=""><i class="fa fa-twitter fa-2x social"></i></a>
+	            <a class="socialicon" href=""><i class="fa fa-google-plus fa-2x social"></i></a>
+	            <a class="socialicon" href=""><i class="fa fa-instagram fa-2x social"></i></a>
+        </div>
       </div>
+
     </section>
+
+
+
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
